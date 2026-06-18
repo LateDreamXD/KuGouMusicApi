@@ -20,10 +20,12 @@
   "scripts": {
     "dev": "nodemon --config nodemon.json index.js",
     "start": "node app.js",
-    "pkgwin": "pkg . -t node14-win-x64 -C GZip -o bin/app_win --no-bytecode",
-    "pkglinux": "pkg . -t node14-linux-x64 -C GZip -o bin/app_linux --no-bytecode",
-    "pkglinux-arm64": "pkg . -t node14-linux-arm64 -C GZip -o bin/app_linux --no-bytecode",
-    "pkgmacos": "pkg . -t node14-macos-x64 -C GZip -o bin/app_macos --no-bytecode",
+    "pkgwin": "pkg . -t node20-win-x64 -C GZip -o bin/app_win --no-bytecode",
+    "pkgwin-arm64": "pkg . -t node20-win-arm64 -C GZip -o bin/app_win --no-bytecode",
+    "pkglinux": "pkg . -t node20-linux-x64 -C GZip -o bin/app_linux --no-bytecode",
+    "pkglinux-arm64": "pkg . -t node20-linux-arm64 -C GZip -o bin/app_linux --no-bytecode",
+    "pkgmacos": "pkg . -t node20-macos-x64 -C GZip -o bin/app_macos --no-bytecode",
+    "pkgmacos-arm64": "pkg . -t node20-macos-arm64 -C GZip -o bin/app_macos --no-bytecode",
     "pkgjs": "esbuild index.js --bundle --minify --outfile=bin/api_js/app.js --platform=node && mkdir -p bin/api_js/util bin/api_js/module && esbuild util/*.js --bundle --minify --outdir=bin/api_js/util --platform=node && esbuild module/*.js --bundle --minify --outdir=bin/api_js/module --platform=node"
   },
   "engines": {
@@ -48,7 +50,7 @@
     "@types/pako": "^2.0.0",
     "@types/qrcode": "^1.5.0",
     "nodemon": "^3.1.10",
-    "pkg": "^5.8.1",
+    "@yao-pkg/pkg": "^6.20.0",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
